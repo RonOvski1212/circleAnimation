@@ -1,0 +1,40 @@
+:root {
+    --rotate: 0deg;
+    --bg-color: rgb(255, 255, 255);
+    --size: 1rem;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #1e293b, #0f172a);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.element {
+    background: var(--bg-color);
+    animation: rotate 10000ms infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: var(--size);
+    height: var(--size);
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        border-radius: 50%;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        border-radius: 5%;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+        transform: translate(-50%, -50%) rotate(var(--rotate));
+    }
+}
